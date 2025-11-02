@@ -1,0 +1,20 @@
+﻿namespace Services.Specifications;
+internal class OrderSpecifications
+    : BaseSpecifications<Order>
+{
+    public OrderSpecifications(Guid id)
+        : base(order => order.Id == id)
+    {
+        AddInclude(x => x.DeliveryMethod);
+        AddInclude(x => x.Items);
+    }
+
+    public OrderSpecifications(string email)
+      : base(order => order.BuyerEmail == email)
+    {
+        AddInclude(x => x.DeliveryMethod);
+        AddInclude(x => x.Items);
+
+        AddOrderByDesc(x => x.OrderDate);
+    }
+}

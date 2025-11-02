@@ -1,0 +1,14 @@
+@baseUrl = https://localhost:7069/api
+
+GET {{baseUrl}}/products
+###
+
+GET {{baseUrl}}/products/16
+###
+
+GET {{baseUrl}}/products/brands
+###
+
+GET {{baseUrl}}/products/types
+###
+
